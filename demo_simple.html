@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>ViewIt: Simple Demo</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" type="text/css" href="css/canvas.css" />
+	<link rel="stylesheet" type="text/css" href="js/viewit/view_it.css" />
+	<script type="text/javascript" src="canvas.js" ></script>
+	<script type="text/javascript" src="js/viewit/view_it.js" ></script>
+	<script type="text/javascript" src="js/jquery/jquery-1.4.4.min.js" ></script>
+	<script type="text/javascript" src="js/jquery/jquery-ui-1.8.1-custom.min.js" ></script>
+	<script type="text/javascript" src="js/jquery/jquery.hotkeys.js" ></script>
+</head>
+<body>
+	<h3>ViewIt: Simple Demo</h3>
+	<p>
+		A very simple demo of ViewIt. View the page source for an explanation of how things are implemented. <a href="demo_full.html">Also see the full demo</a>.
+	</p>
+
+	<div id="bodyDiv">
+		<div id="upperDiv">
+			<!-- Note how we've hidden the list of images, for a more compact user interface.	 -->
+			<div id="viewItList" style="display:none">
+				<a href="images/sales_001.jpeg" title="Sales 001">Sales 001</a><br>
+				<a href="images/sales_002.jpeg" title="Sales 002">Sales 002</a><br>
+				<a href="images/sales_003.jpeg" title="Sales 003">Sales 003</a><br>
+				<a href="images/sales_004.jpeg" title="Sales 004">Sales 004</a><br>
+				<a href="images/sales_005.jpeg" title="Sales 005">Sales 005</a><br>		
+				<a href="images/completion.jpg" title="Completion">Completion</a><br>
+				<a href="images/credit1.jpg" title="Credit 1">Credit 1</a><br>
+				<a href="images/credit2.jpg" title="Credit 2">Credit 2</a><br>
+				<a href="images/frazetta1.jpg" title="Frazetta #1">Frazetta #1</a><br>
+				<a href="images/frazetta2.jpg" title="Frazetta #2">Frazetta #2</a>
+			</div>
+			<!-- Empty div. This is where ViewIt will place navigation buttons. -->
+			<div id="myNav">
+			</div>
+		</div>		
+		<!-- Specify the canvas element for ViewIt to use, along with some "gentle reminder" text for IE6,7,8 users. -->
+		<canvas id="viewItCanvas" width="1024" height="768">
+			<p>
+				Sorry, your browser doesn't support the &lt;canvas&gt; element.  Try FireFox, Chrome, a mobile phone
+				running the latest Android, BlackBerry, or Apple OS, or Internet Explorer 9+.
+			</p>
+		</canvas>
+
+		<!-- 
+			Here's where we tie it together.
+			Just need to pass three things to ViewIt.. 1) canvas div id 2) image list id 3) nav div id
+			The 4th parameter determines whether the page counter is shown or not
+		-->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				viewItInit('viewItCanvas','viewItList','myNav', true);
+			});	
+		</script>
+	</div>	
+
+</body>
+</html>

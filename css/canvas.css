@@ -1,0 +1,36 @@
+body {	
+	background-color: #86838A;	
+	color:#FFF;
+	}
+
+a, a:visited, a:active {
+	color:#D5EDF9;
+}
+	
+#myMessage {
+	border: 2px solid rgba(0,0,0,0.4);
+	background-color: rgba(0,0,0,0.3);	
+	color: rgba(255,255,255,1.0);
+	font-size: 14px;
+	font-weight:bold;
+	height:20px;
+	margin:5px 0px 5px 0px;
+	padding:5px;
+	position:relative;
+}
+
+#myMessage.messageGood {
+	border-color: rgba(108, 170, 109, 0.9);
+	background-color: rgba(134, 209, 135, 0.7);
+	display:block; 
+}
+
+#myMessage.messagePanic {
+	border-color: rgba(170, 75, 94, 0.9);
+	background-color: rgba(170, 75, 94, 0.4);
+	display:block;
+}
+
+#myNav {
+	margin:5px 0px 5px 0px;
+}

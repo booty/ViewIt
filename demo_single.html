@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>ViewIt: Single-Image Demo</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" type="text/css" href="css/canvas.css" />
+	<link rel="stylesheet" type="text/css" href="js/viewit/view_it.css" />
+	<script type="text/javascript" src="canvas.js" ></script>
+	<script type="text/javascript" src="js/viewit/view_it.js" ></script>
+	<script type="text/javascript" src="js/jquery/jquery-1.4.4.min.js" ></script>
+	<script type="text/javascript" src="js/jquery/jquery-ui-1.8.1-custom.min.js" ></script>
+	<script type="text/javascript" src="js/jquery/jquery.hotkeys.js" ></script>
+</head>
+<body>
+	<h3>ViewIt: Single-Image Demo</h3>
+	<p>
+		ViewIt with only a single images. View the page source for an explanation of how things are implemented. <a href="demo_full.html">Also see 
+		the full demo</a> and the <a href="demo_simple.html">simple demo</a>.
+	</p>
+
+	<div id="bodyDiv">
+		<div id="upperDiv">
+			<!-- Note how we've hidden the list of images, for a more compact user interface.	 -->
+			<div id="viewItList" style="display:none">
+				<a href="images/sales_001.jpeg" title="Sales 001">Sales 001</a><br>
+			</div>
+			<!-- Empty div. This is where ViewIt will place navigation buttons. -->
+			<div id="myNav">
+			</div>
+		</div>		
+		<!-- Specify the canvas element for ViewIt to use, along with some "gentle reminder" text for IE6,7,8 users. -->
+		<canvas id="viewItCanvas" width="1024" height="768">
+			<p>
+				Sorry, your browser doesn't support the &lt;canvas&gt; element.  Try FireFox, Chrome, a mobile phone
+				running the latest Android, BlackBerry, or Apple OS, or Internet Explorer 9+.
+			</p>
+		</canvas>
+
+		<!-- 
+			Here's where we tie it together.
+			Just need to pass three things to ViewIt.. 1) canvas div id 2) image list id 3) nav div id
+			The 4th parameter determines whether the page counter is shown or not
+		-->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				viewItInit('viewItCanvas','viewItList','myNav', true);
+			});	
+		</script>
+	</div>	
+
+</body>
+</html>

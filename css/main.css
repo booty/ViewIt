@@ -1,0 +1,45 @@
+body, a, td {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+#hotkeyInfo {
+	background-color:pink;
+	border-color:red;
+	border-style:solid;
+	border-width:1px 2px 2px 1px;
+	float:right;
+	font-size:smaller;
+	margin-bottom:15px;
+	padding:2px 10px;
+	width:180px;
+}
+
+#viewItCanvasFoo {
+	background: silver;
+	border:1px black solid;
+	height:700px;
+	margin-bottom:10px;
+	margin-top:10px;
+	overflow:hidden;
+	position:relative;
+	width:100%;
+}
+
+#alfredNav {
+	clear:both;
+}
+
+#alfredNav a {
+	background-color:pink;
+	padding:5px;
+}
+
+
+#alfredList { margin-bottom: 15px;}
+
+#alfredList a {
+	padding-left: 18px;
+	background-image: url('../images/icons/page.png');
+	background-repeat: no-repeat;
+}
+

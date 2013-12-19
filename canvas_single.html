@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Canvas: Full Demo</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" type="text/css" href="css/canvas.css" />
+	<link rel="stylesheet" type="text/css" href="js/viewit/view_it.css" />
+	<script type="text/javascript" src="js/canvas.js" ></script>
+	<script type="text/javascript" src="js/viewit/view_it.js" ></script>
+	<script type="text/javascript" src="js/jquery/min/jquery-1.4.2.min.js" ></script>
+	<script type="text/javascript" src="js/jquery/min/jquery-ui-1.8.1.custom.min.js" ></script>
+	<script type="text/javascript" src="js/jquery/dev/jquery.hotkeys.js" ></script>
+</head>
+<body>
+
+	<div id="bodyDiv">
+		<div id="upperDiv">
+			<div id="hotkeyInfo">
+				<p>
+					<strong>Hotkeys</strong><br>
+					PgUp: Scroll up 10% <br>
+					PgDn: Scroll down 10%<br>
+					Home: Rotate right<br>
+					End: Rotate left<br>
+					Ins: Zoom in<br>
+					Del: Zoom out<br>
+				</p>
+			</div>
+			<div id="viewItList">
+				<a href="images/sales_001.jpeg">Sales 001</a><br>
+			</div>
+		
+			<div id="myMessage">
+			</div>
+			
+			<div id="myNav">
+				<a href="#" id='myButton'>My Button</a>
+				<a href="#" id='panicButton'>Panic!</a>
+				<a href="#" id='adviceButton'>Advice</a>
+			</div>
+	
+		<canvas id="viewItCanvas" width="1024" height="768">
+			<p>
+				Sorry, your browser doesn't support the &lt;canvas&gt; element.  Try FireFox, Chrome, a mobile phone
+				running the latest Android, BlackBerry, or Apple OS, or Internet Explorer 9+.
+			</p>
+		</canvas>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				viewItInit('viewItCanvas','viewItList','myNav');
+				
+				// Create click handlers for our toolbar buttons
+				$(document.getElementById('myButton')).click( function() {	showMessage('myMessage', 'Thank you for clicking my button.','messageGood',0); });
+				$(document.getElementById('panicButton')).click( function() { showMessage('myMessage', 'Whoa!  Things are a little crazy!', 'messagePanic', 100);	});
+				$(document.getElementById('adviceButton')).click( function() {	showMessage('myMessage', getAdvice(), 'messageGood', 10); });
+				
+				// This illustrations how you can set a callback function, to get notications from ViewIt
+				viewItOptions[VIEW_IT_CALLBACK_FUNCTION] = function(imgSrc, rotationAngle) {
+					showMessage('myMessage', 'New rotation angle is ' + rotationAngle + ' degrees.', 'messageGood',0);
+				};	
+			});	
+			
+			
+			
+			
+		</script>
+	</div>	
+	
+
+</body>
+</html>
